@@ -45,11 +45,25 @@ def hof():
 
     print(players.loc[roster])
 
-hof()
 
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # Add a new player to a team
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+def add():
+    # User inputs a string
+    write_players = pd.read_csv('players_test.csv')
+
+    new_player = input("Please Enter player date in the follwoing format:\n" \
+    "Name, Team, Position (PG,SG,SF,PF,C), Height (foot-inches), Points Per Game:\n")
+
+    # Convert String into a list. The new player input is first split into a list by commas using split(","), then the for loop strips the spaces on the edges of each list item using i.strip().
+    player_data = [i.strip() for i in new_player.split(",")]
+    player_data = pd.DataFWetrame(player_data)
+    updated = pd.concat([write_players, player_data])
+
+
+add()
 
 
 

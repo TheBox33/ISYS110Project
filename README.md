@@ -24,7 +24,7 @@ Program Basic Functions
 
         Display the Team List.
             Create a list of Sports Teams.
-                You may need to use a list, dictionary or tuple.
+                You might need to use a list, dictionary or tuple.
                 Choose at least 3 properties.
                 Properties may include Sport (Such as baseball, football, hockey), Team Name (such as Dodgers) 
 #               ^^^^^^^^ (Basketball, Team Name, Record, Season) ^^^^^^^^

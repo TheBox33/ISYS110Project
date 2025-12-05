@@ -5,7 +5,7 @@ import string
 # ++++++++++++++++++++++++++++++++++++++++++++++++++
 # 
 # ++++++++++++++++++++++++++++++++++++++++++++++++++
-players =pd.read_csv('players.csv')
+players = pd.read_csv('players.csv')
 
 team_list = pd.read_csv('team_list.csv')
 
@@ -13,16 +13,44 @@ team_list = pd.read_csv('team_list.csv')
 # +++++++++++++++++++++++++++++++++++++++++++++++++
 # Display the team list
 # +++++++++++++++++++++++++++++++++++++++++++++++++
-tl = team_list.sort_values(by ='Team')
 
-# Displays the sport and team name, sorted by team name
-print(tl[['Sport','Team'][0:5]])
+def teams():
+    tl = team_list.sort_values(by ='Team')
+
+    # Displays the sport and team name, sorted by team name
+    print(tl[['Sport','Team'][0:5]])
 
 # +++++++++++++++++++++++++++++++++++++++++++++++++
 # Display the players on a specific team
 # +++++++++++++++++++++++++++++++++++++++++++++++++
 
-# Uses the previous print function
-selection = input("Please type a team to see their All-Time starting 5: ")
+# Display the team list file.
+# The user chooses a team. 
+# Read the players file.
+# Display only the list of players for that team, sorted by the player name, position or other property.
 
-I think to display the players on the team I check to see if the index value contains the team name. I think that should work, just have to figure out the syntax.
+# Prints the selected team's all time starting 5. Their Hall of Fame (hof).
+
+def hof():
+    players = pd.read_csv('players.csv')
+    team_list = pd.read_csv('team_list.csv')
+
+    print(team_list)
+    selection = input("Please type a team to see their All-Time starting 5: ")
+
+    # This line was taken from https://www.slingacademy.com/article/pandas-dataframe-get-indexes-of-rows-where-column-meets-certain-condition/
+        
+    players = players.sort_values(by = 'PPG')
+    roster = players.index[players['Team'] == selection].tolist()
+
+    print(players.loc[roster])
+
+hof()
+
+# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# Add a new player to a team
+# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+

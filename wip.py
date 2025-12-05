@@ -51,19 +51,25 @@ def hof():
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 def add():
+    write_players = pd.read_csv('players.csv')
+    player_columns = ['NAME', 'TEAM', 'POSITION', 'HEIGHT', 'PPG']
     # User inputs a string
-    write_players = pd.read_csv('players_test.csv')
 
-    new_player = input("Please Enter player date in the follwoing format:\n" \
-    "Name, Team, Position (PG,SG,SF,PF,C), Height (foot-inches), Points Per Game:\n")
+    print("Please Enter player data in the following format:\n" \
+    "Name (First Last), Team, Position (PG,SG,SF,PF,C), Height (foot-inches), Points Per Game (XX.X):\n")
+    player_entry = {}
+    for i in player_columns:
+        user_entry = input(f"Please enter {i}: ").upper()
+        player_entry[i] = user_entry
+    
+    player_entry = pd.DataFrame([player_entry])
+    
+    updated = pd.concat([write_players, player_entry], ignore_index =True)
 
-    # Convert String into a list. The new player input is first split into a list by commas using split(","), then the for loop strips the spaces on the edges of each list item using i.strip().
-    player_data = [i.strip() for i in new_player.split(",")]
-    player_data = pd.DataFWetrame(player_data)
-    updated = pd.concat([write_players, player_data])
-
+    updated.to_csv('players_test.csv', index=False)
 
 add()
+
 
 
 

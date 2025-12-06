@@ -1,8 +1,7 @@
-Sport,Team,City,Championships
-Basketball,Trail Blazers,Portland,1
-Basketball,Lakers,Los Angeles,17
-Basketball,Nuggets,Denver,1
-Basketball,Spurs,San Antonio,5
-Basketball,Bulls,Chicago,6
-
+SPORT,TEAM,CITY,CHAMPIONSHIPS
+BASKETBALL,TRAIL BLAZERS,PORTLAND,1
+BASKETBALL,LAKERS,LOS ANGELES,17
+BASKETBALL,NUGGETS,DENVER,1
+BASKETBALL,SPURS,SAN ANTONIO,5
+BASKETBALL,BULLS,CHICAGO,6
 

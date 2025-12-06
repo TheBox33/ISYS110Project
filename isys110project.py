@@ -29,7 +29,7 @@ def teams():
 
 # hof is short for Hall of Fame, because this shows the selected team's all time starting 5.
 def hof():
-
+    
     # Reading the players file
     players = pd.read_csv('players.csv')
 
@@ -44,9 +44,20 @@ def hof():
 
     # This just displays the team names for the user to select from
     print(tl[['TEAM']])
-
-    # Storing user input in a variable
-    selection = input("Please type a team to see their All-Time starting 5:\n")
+   
+    while True:
+        # Storing user input in a variable
+        selection = input("Please type a team to see their All-Time starting 5:\n").upper()
+        # .values checks the actual data in the column team
+        # if the user input isn't in the column the they are prompted to try again
+        if selection not in team_list['TEAM'].values:
+            print("Please enter a valid team...\n\n\n~~~~~~~~~~~~~~")
+            time.sleep(1)
+        # if the input is valid, the program moves on to the next step.
+        else:
+            print(f"\n{selection} selected\n")
+            time.sleep(1)
+            break
 
     
     
